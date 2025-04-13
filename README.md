@@ -41,7 +41,7 @@ Input: A test case
 Use: Import a test case. Each time-step is executed in two steps first all the moves for that time-step are calculated and shown and then these moves are executed. This can be triggered manually by clicking Step Forward on the sidebar. Alternatively you can click Play to step forward automatically until the simulation ends or you click Pause.
 Output: The simulation result displayed on screen upon completion
 
-6. **App6_BulkTestExecutor**, **App6_BulkTestExecutor_Combined**
+**App6_BulkTestExecutor**, **App6_BulkTestExecutor_Combined**
 Input: The folder containing many test cases.
 Output: The simulation results for each of these test cases.
 
