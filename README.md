@@ -15,7 +15,6 @@ Input: Map File or a Partitioned Map File
 Use: Choose a color from the sidebar and paint the partitions manually, shades of green can be used to draw the locations guest agents can access (tiling), shades of red can be used to draw the locations guest agents cant access, and blue can be used to draw parking locations which cant be accessed by the guest agents and will be used by the home agents as resting points if there are no tasks left when using my algorithm.
 Note: **App2_MapPartitioner** calculates all possible partitionings automatically and can be used to select and export the partitioned map file, HOWEVER it uses brute force to do this which means even for a small map of about 10x10 it will take close to 2 hours to conclude, this app is not recommended to be used for map partitioning without optimizing its software first.
 
-
 3. **App3_AgentPlacer**
 Output: Map File with Agents
 Input: Partitioned Map File or Map File with Agents
@@ -41,10 +40,9 @@ Input: A test case
 Use: Import a test case. Each time-step is executed in two steps first all the moves for that time-step are calculated and shown and then these moves are executed. This can be triggered manually by clicking Step Forward on the sidebar. Alternatively you can click Play to step forward automatically until the simulation ends or you click Pause.
 Output: The simulation result displayed on screen upon completion
 
-**App6_BulkTestExecutor**, **App6_BulkTestExecutor_Combined**
+ 6.**App6_BulkTestExecutor**, **App6_BulkTestExecutor_Combined**
 Input: The folder containing many test cases.
 Output: The simulation results for each of these test cases.
-
 - **Simulate_combined_team** and **App6_BulkTestExecutor_Combined** exist to handle the case where we consider the two teams acting as one (No need for observations to know other teams' agents' locations.)
 
 7. **App7_AnalysisofResults**
@@ -53,7 +51,7 @@ Output: On the console the averaging and data analysis of these results are show
 
 
 # 3. Mode of Use
-- In order to run simulations we must first crate test cases. A test case requires the following data to be set:
+- In order to run simulations we must first create test cases. A test case requires the following data to be set:
 	- The map
 	- The partitions
 	- Location of the agents
@@ -70,3 +68,16 @@ Output: On the console the averaging and data analysis of these results are show
 	4. Follow the instructions in the console to select the number of agents for each team, number of tasks per agent and the number of test cases you would like to create. The test cases will be created in ./tests/map_name/tests Also a setting file will be created in ./tests/map_name/ which can be used later on to create more test cases that use the same agent placement and possible task endpoints.
 - After creating a test case this test case can be run using **Simulate** or **App6_BulkTestExecutor**. **Simulate** offers a GUI and detailed console reports, **App6_BulkTestExecutor** offers the same software but with multithreading and no console reporting. So it is best practice to first make sure an algorithm works correctly using **Simulate** on a select set of small test cases, then create many test cases using **App5_BulkTestGenerator** and test all these test cases using **App6_BulkTestExecutor**. **Simulate** showcases the simulation results at the end while **App6_BulkTestExecutor** saves the simulation results under ./results/map_name for each test case. The average results and the analysis of these bulk test results can be reported by using **App7_AnalysisofResults**
 - **Simulate_combined_team** and **App6_BulkTestExecutor_Combined** exist to handle the case where we consider the two teams acting as one (No need for observations to know other teams' agents' locations.)
+
+# 4. To Do List for Comparison with Benedetta
+- [ ] Create Benedetta's Algorithm.
+- [ ] Create a Test Case Setting file with: (Modify App5 to handle the seperate agent, pickup and delivery placement rules)
+	- [ ] Delivery locations outside the tiling
+	- [ ] Start locations at the edges of the map
+	- [ ] Pickup locations in the tiling
+	- [ ] Delivery of guest not same with delivery of home.
+- [ ] Generate 50 (or more) test cases for each map
+- [ ] Run the tests
+- [ ] Analyze the results
+
+
