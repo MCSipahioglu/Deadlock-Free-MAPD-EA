@@ -53,7 +53,7 @@ Output: On the console the averaging and data analysis of these results are show
 
 
 # 3. Mode of Use
-- In order to run simulations we must first test cases. A test case requires the following data to be set:
+- In order to run simulations we must first crate test cases. A test case requires the following data to be set:
 	- The map
 	- The partitions
 	- Location of the agents
